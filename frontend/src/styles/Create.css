@@ -1,0 +1,109 @@
+.form{
+    max-width: 600px;
+    height: 600px;
+    /* border: 2px solid; */
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4em auto;
+    background-color: rgba(208, 169, 118, 0.61);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+.form input{
+    padding-left: 13px;
+    height: 40px;
+    width: 300px;
+    justify-content:space-between;
+    margin: 10px;
+    border-radius: 7px;
+    border: 1px solid; 
+    transition: .3s ease-out;  
+}
+
+.form input:hover{
+  background-color: #cccccc6a;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.form .drop-zone {
+    margin-top: 10px;
+    width: 400px;
+    height: 280px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #f9f9f9;
+    text-align: center;
+    transition: .3s ease-out;  
+
+}
+
+.form .drop-zone:hover{
+  background-color: #f3e7e7ed;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+}
+
+.form .uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+
+.form .add{
+    margin-top: 20px;
+    background-color: #4CAF50;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    color: white;
+    width: 140px;
+    transition: .3s ease-out;
+    font-size: 14px;
+}
+
+.form .add:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(172, 163, 163); 
+    z-index: 1000; 
+  }
+  
+  .spinner {
+    border: 5px solid rgba(255, 255, 255, 0.903);
+    border-radius: 50%;
+    border-top: 5px solid #ff0000;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
