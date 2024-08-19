@@ -2,7 +2,7 @@
 
 ## Overview
 
-    Welcome to the Gallery Project! This application is designed to display a collection of photos in a grid layout with a responsive and user-friendly interface. Users can view photos, navigate to detailed views, and add new photos. The project is built using React.js and utilizes various features to enhance the user experience.
+    Welcome to the Photo management app! This application is designed to display a collection of photos in a grid layout with a responsive and user-friendly interface. Users can view photos, navigate to detailed views, and add new photos. The project is built using React.js and utilizes various features to enhance the user experience.
 
 ## Features
 
