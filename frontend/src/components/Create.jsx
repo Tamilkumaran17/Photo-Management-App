@@ -3,6 +3,7 @@ import { useDispatch} from 'react-redux';
 import { addPhoto } from "../redux/PhotoSlice";
 import {useNavigate} from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { FaArrowRight } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Create.css';
 import axios from "axios";
@@ -128,6 +129,8 @@ const Create = () =>{
                 <div className="spinner"></div>
             </div>
         ) : (
+            <>
+            <h2 onClick={()=> {navigate('/')}} className="back">Back <FaArrowRight className="right"/> </h2>
         <form onSubmit={handleSubmit} className="form">
             <h2>Create New Photo</h2>
             <input type="text" name="title" placeholder="Title" value={photo.title} onChange={handleChange} ></input>
@@ -164,6 +167,7 @@ const Create = () =>{
             />
        
         </form>
+        </>
         )}
         </>
     )

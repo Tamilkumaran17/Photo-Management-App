@@ -73,6 +73,7 @@ const Details = () => {
                 </div>
             ): ( <>
             <div className="image-container">
+            <button className="go-to-gallery" onClick={handleGoToGallery}>Go to Gallery</button>
                 <img src={photos[currentIdx].imageURL} alt={photos[currentIdx].title} />
 
                 <div className="slider">
@@ -88,7 +89,6 @@ const Details = () => {
             </div>
             </div>
             <div className="info-container">
-                <button className="go-to-gallery" onClick={handleGoToGallery}>Go to Gallery</button>
                 <p className="title">{photos[currentIdx].title.toUpperCase()}</p>
                 <p className="des"><span>Description</span>: {photos[currentIdx].description}</p>
                 <p className="date"> <span>Date:</span> {photos[currentIdx].date.split('T')[0].split('-').reverse().join('-')}</p>
