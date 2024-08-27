@@ -72,9 +72,18 @@
     
 }
 
+
+.create-cell p{
+    cursor: pointer;
+    margin-left: -10px;
+}
+
 .plus{
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 50%;
     margin-top: 70px;
-    margin-left: 50px;
+    margin-left: 40px;
     transition: .3s ease-in-out;
     cursor: pointer;
 }
@@ -104,6 +113,22 @@
     font-weight: 600;
     margin-top: 17px;
 }
+
+.photo-cell button{
+    height: 24px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.747);
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-out;
+    font-weight: bold;
+}
+.photo-cell button:hover{
+    scale: 1.1;
+}
+
 
 @media (max-width: 1200px) {
     .grid {

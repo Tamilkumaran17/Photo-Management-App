@@ -47,7 +47,7 @@ const Create = () =>{
         axios.post("http://localhost:3001/gallery/upload", formData).
         then(res => {
             setLoading(false); 
-            console.log("result"+ res);
+            // console.log("result"+ res);
 
             if (res.status === 200) {
                 dispatch(addPhoto(res.data));
@@ -114,7 +114,7 @@ const Create = () =>{
         };
         reader.readAsDataURL(file);
     };
-    console.log(image);
+    // console.log(image);
     
 
     const preventDefaults = (e) => {
@@ -152,19 +152,7 @@ const Create = () =>{
             </div>
 
             <button type="submit" className="add">Add to gallery</button>
-            <ToastContainer
-            position="bottom-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            pauseOnHover={false}
-            theme="light"
-            transition: Bounce
-            />
+            
        
         </form>
         </>

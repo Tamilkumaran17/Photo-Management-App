@@ -4,10 +4,25 @@ import Create from './components/Create';
 import Gallery from './components/Gallery';
 import Details from './components/Details';
 import './App.css'
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
-  return (
+  return (<>
+  <ToastContainer
+    position="bottom-right"
+    autoClose={3000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss={false}
+    draggable
+    pauseOnHover={false}
+    theme="light"
+    transition: Bounce
+    />  
+    
     <Router>
       <Routes>
       <Route path="/" element={<Gallery />} />
@@ -15,6 +30,9 @@ function App() {
         <Route path="/photo/:id" element={<Details />} />
       </Routes>
     </Router>
+    
+    
+    </>
   );
 }
 

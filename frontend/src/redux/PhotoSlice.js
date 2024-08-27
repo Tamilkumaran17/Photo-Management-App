@@ -14,6 +14,16 @@ const photoSlice = createSlice({
             state.photos = state.photos.filter((photo,index) => index !== action.payload)
 
         },
+        update(state,action){
+            const {Id,newTitle,newDes} = action.payload;
+
+            state.photos = state.photos.map((p)=>{
+                if(p.id===Id){
+                    return {...p,title:newTitle,description:newDes}
+                }
+                else return p;
+            })
+        },
 
         initPhoto(state,action){
             state.photos = action.payload;
@@ -22,5 +32,5 @@ const photoSlice = createSlice({
     
 })
 
-export const {addPhoto,removePhoto,initPhoto} = photoSlice.actions;
+export const {addPhoto,removePhoto,initPhoto,update} = photoSlice.actions;
 export default photoSlice.reducer;

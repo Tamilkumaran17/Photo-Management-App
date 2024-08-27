@@ -61,4 +61,25 @@ exports.deleteImage = async (req,res)=>{
     }
 
 
+};
+
+exports.update = async (req,res)=>{
+    try {
+        const id = req.params.id;
+        const {title,description} = req.body;
+        const image = await GalaryService.getById(id); 
+        console.log(image + "image" + id);
+        if(!image) return res.status(404).json({message:"Image not found"});
+
+        image.title = title || image.title;
+        image.description = description || image.description;
+
+       const updated =  await image.save();
+       res.status(200).json({message: "updated",updated});
+    }catch(error){
+        console.log(error);
+        res.status(500).json({error : error.message});
+
+    }
+
 }

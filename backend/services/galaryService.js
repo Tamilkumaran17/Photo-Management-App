@@ -16,6 +16,10 @@ class GalaryService{
     static getImageById = async (id)=>{
         return await imageModel.findOne({id}).select(`-_id`);
     }
+
+    static getById = async (id)=>{
+        return await imageModel.findOne({id})
+    }
 }
 
 module.exports = GalaryService;
