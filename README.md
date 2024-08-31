@@ -29,6 +29,7 @@
 
 - The Uploaded image from the user can be saved through the external stroage bucket called "Cloudinary".  
 - The uploaded image can be fetched from the cloudinary and displayed in the gallery page.
-- The user can delete the image from the detail page.
+- The user can delete the image from the detail page and in gallery page.
+- Afer uploaded the image to the gallery, the user can edit their title and desdescription from the details page
 
 
