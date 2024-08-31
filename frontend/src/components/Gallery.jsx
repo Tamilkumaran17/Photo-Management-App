@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FixedSizeGrid as Grid } from "react-window";
-import { FaPlus, FaTrashAlt } from 'react-icons/fa';
+import { FaPlus, FaSearch, FaTrashAlt } from 'react-icons/fa';
 import "../styles/Gallery.css";
 import axios from "axios";
 import { initPhoto, removePhoto } from "../redux/PhotoSlice";
@@ -16,7 +16,7 @@ const Gallery = () => {
 
     const [isDelete, setDelete] = useState(false); 
     const [confrimPhoto, setConfrimPhoto] = useState(null);
-
+    const [searchQuery, setSearchQuery] = useState("");  
     const handleCreat = () => {
         navigate('/create');
     }
@@ -43,10 +43,20 @@ const Gallery = () => {
         handelGetPhoto();
     }, []);
 
+
+    // serch implementation
+
+    const filteredPhotos = photos.filter((photo) =>
+        photo.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // cell creation
     const Cell = ({ columnIndex, rowIndex, style }) => {
         const index = rowIndex * 7 + columnIndex;
-        const totalCells = photos.length + 1;
+        const totalCells = filteredPhotos.length + 1;
 
+
+                // default cell that need to be displayed even no images are present
         if (index === totalCells - 1) {
             return (
                 <div style={{ ...style, height: "300px", marginTop: "20px" }} className="photo-cell create-cell" >
@@ -56,9 +66,11 @@ const Gallery = () => {
             );
         };
 
-        if (index >= photos.length) return null;
-        const photo = photos[index];
 
+        if (index >= filteredPhotos.length) return null;
+        const photo = filteredPhotos[index];
+
+            // photos
         return (
             <div style={{ ...style, height: "300px", marginTop: "20px" }} className="photo-cell">
                 <button onClick={() => handleDelete(photo)}> <FaTrashAlt /> </button>
@@ -70,10 +82,15 @@ const Gallery = () => {
         );
     };
 
+
+            // main return
+
     return (
         <div className="gallery-container no-scrollbar">
             <header>
                 <h2>Gallery</h2>
+                <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="search-box"/>
+                <FaSearch className="search-icon"/>
                 <button onClick={handleCreat} className="crt-btn">Create</button>
             </header>
 
@@ -82,7 +99,7 @@ const Gallery = () => {
                 columnCount={7}
                 columnWidth={200}
                 height={590}
-                rowCount={Math.ceil((photos.length + 1) / 7)}
+                rowCount={Math.ceil((filteredPhotos.length + 1) / 7)}
                 rowHeight={300}
                 width={1520}
             >
