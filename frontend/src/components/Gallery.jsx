@@ -106,6 +106,9 @@ const Gallery = () => {
                 {Cell}
             </Grid>
 
+            
+            {/* confrim page load */}
+
             <Confrim 
                 show={isDelete}
                 title={confrimPhoto?.title} 

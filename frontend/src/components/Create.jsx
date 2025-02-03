@@ -8,8 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Create.css';
 import axios from "axios";
 
-const MAXX_SIZE = 5;
-
 
 const Create = () =>{
     const [photo,setPhoto] = useState({
