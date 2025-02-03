@@ -16,7 +16,7 @@ const Confrim = (props)=>{
   
 
     if(!props.show) return null;
-    const handleConform =()=>{
+    const handleConform =()=>{ 
         const id=props.confrim.id;
         console.log(id);
         
