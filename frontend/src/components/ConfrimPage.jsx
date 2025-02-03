@@ -20,7 +20,7 @@ const Confrim = (props)=>{
         const id=props.confrim.id;
         console.log(id);
         
-        axios.delete(`http://localhost:3001/gallery/delete/${id}`)
+        axios.delete(`https://photo-management-app-backend.onrender.com/gallery/delete/${id}`)
             .then(res => {
                 if (res.status === 200) {
                     dispatch(removePhoto(id));

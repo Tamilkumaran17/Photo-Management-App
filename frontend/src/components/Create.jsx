@@ -42,7 +42,7 @@ const Create = () =>{
 
         setLoading(true);
 
-        axios.post("http://localhost:3001/gallery/upload", formData).
+        axios.post("https://photo-management-app-backend.onrender.com/gallery/upload", formData).
         then(res => {
             setLoading(false); 
             // console.log("result"+ res);

@@ -92,7 +92,7 @@ const Details = () => {
 
     const handleSubmit =()=>{
         const Id=photos[id].id;
-        axios.put(`http://localhost:3001/gallery/put/${photos[id].id}`, {title:newTitle, description: newDes}).then( res=>{
+        axios.put(`https://photo-management-app-backend.onrender.com/gallery/put/${photos[id].id}`, {title:newTitle, description: newDes}).then( res=>{
             if(res.status === 200){
                 dispatch(update({Id,newTitle,newDes}));
                 toast.success('Photo Updated Successfully');

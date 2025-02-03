@@ -22,7 +22,7 @@ const Gallery = () => {
     }
 
     const handelGetPhoto = () => {
-        axios.get("http://localhost:3001/gallery/getImage")
+        axios.get("https://photo-management-app-backend.onrender.com/gallery/getImage")
             .then((res) => {
                 if (res.status === 200) {
                     dispatch(initPhoto(res.data));
